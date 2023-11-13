@@ -1,0 +1,37 @@
+<form [formGroup]="form">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input 
+        formControlName="username"
+        class="form-control" 
+        id="username" 
+        type="text"/>
+        <div class="alert alert-danger" *ngIf="username?.touched && username?.invalid">
+            <!-- Your error message content -->
+         
+          <div *ngIf="username?.errors?.required">  user name is required</div>
+          <div *ngIf="username?.errors?.minlength">  min length {{username?.errors?.minlength.actualLength}}/{{username?.errors?.minlength.requiredLength}}</div>
+          <div *ngIf="username?.errors?.maxlength">  max length  {{username?.errors?.minlength.actualLength}}/{{username?.errors?.maxlength.requiredLength}}</div>
+          <div *ngIf="username?.errors?.cannotContainSpace">  Username ne doit pas avoir des espaces!</div>
+        </div>  
+          
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+        formControlName="password"
+        class="form-control"  
+        id="password" 
+        type="password">
+        <div class="alert alert-danger" *ngIf="password?.touched && password?.invalid">
+            <!-- Your error message content -->
+            <div *ngIf="password?.errors?.required">  password required</div>
+            <div *ngIf="password?.errors?.minlength">  min length {{password?.errors?.minlength.actualLength}}/{{password?.errors?.minlength.requiredLength}}</div>
+            <div *ngIf="password?.errors?.maxlength">  max length  {{password?.errors?.maxlength.actualLength}}/{{password?.errors?.maxlength.requiredLength}}</div>
+            <div *ngIf="password?.errors?.cantContainSpace">  Password ne doit pas avoir des espaces!</div>
+        </div>
+    </div>
+     <div class="form-group">
+        <button class="btn btn-primary">Save</button>
+     </div>
+</form>
