@@ -26,10 +26,10 @@
                     Ce champ est obligatoire</div>
                 <div *ngIf="firstName.errors?.minlength">
                     Ce champ doit avoir au moin {{firstName.errors?.minlength.actualLength}} /
-                    {{firstName.errors?.minlength.requiredLength}} Caractere
+                    {{firstName.errors?.minlength.requiredLength}} Caractére
                 </div>
                 <div *ngIf="firstName.errors?.pattern">
-                    First name doit etre alpha !
+                    First name doit être alpha !
                 </div>
             </div>
         </div>
